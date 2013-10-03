@@ -32,26 +32,29 @@ public class GildedRose {
     final String agedBrie = "Aged Brie";
     final String backstagePass = "Backstage passes to a TAFKAL80ETC concert";
     final String sulfuras = "Sulfuras, Hand of Ragnaros";
+
+    if (!item.is(sulfuras))
+      item.decreaseSellIn();
+
     if (!item.is(agedBrie) && !item.is(backstagePass) && !item.is(sulfuras))
       item.decreaseQuality();
 
     if (item.is(agedBrie) || item.is(backstagePass) || item.is(sulfuras))
       item.increaseQuality();
 
-    if (item.is(backstagePass) && item.getSellIn() < 6)
+    if (item.is(backstagePass) && item.getSellIn() < 5)
       item.increaseQuality();
 
-    if (item.is(backstagePass) && item.getSellIn() < 11)
+    if (item.is(backstagePass) && item.getSellIn() < 10)
       item.increaseQuality();
 
-    if (!item.is(sulfuras))
-      item.decreaseSellIn();
+    if (item.is(backstagePass) && item.getSellIn() < 0)
+      item.setZeroQuality();
+
 
     if (item.getSellIn() < 0 && !item.is(agedBrie) && !item.is(backstagePass) && !item.is(sulfuras))
       item.decreaseQuality();
 
-    if (item.getSellIn() < 0 && item.is(backstagePass))
-      item.setZeroQuality();
 
     if (item.getSellIn() < 0 && item.is(agedBrie))
       item.increaseQuality();
