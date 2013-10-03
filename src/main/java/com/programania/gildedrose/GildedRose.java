@@ -20,6 +20,17 @@ public class GildedRose {
     items.add(new Item("Conjured Mana Cake", 3, 6));
 
     updateQuality();
+
+    for(Item item : items)
+      System.out.println(String.format("%s, %s, %s", item.name, item.quality, item.sellIn));
+
+//    Output is:
+//    +5 Dexterity Vest, 19, 9
+//    Aged Brie, 1, 1
+//    Elixir of the Mongoose, 6, 4
+//    Sulfuras, Hand of Ragnaros, 80, 0
+//    Backstage passes to a TAFKAL80ETC concert, 21, 14
+//    Conjured Mana Cake, 5, 2
   }
 
   public static void updateQuality() {
