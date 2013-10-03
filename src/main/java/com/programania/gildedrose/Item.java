@@ -40,4 +40,8 @@ public class Item {
   public void decreaseSellIn() {
     sellIn--;
   }
+
+  public boolean is(String someName) {
+    return name == someName;
+  }
 }

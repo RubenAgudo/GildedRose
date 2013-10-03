@@ -32,33 +32,29 @@ public class GildedRose {
     final String agedBrie = "Aged Brie";
     final String backstagePass = "Backstage passes to a TAFKAL80ETC concert";
     final String sulfuras = "Sulfuras, Hand of Ragnaros";
-    if (!is(item, agedBrie) && !is(item, backstagePass) && item.getQuality() > 0 && !is(item, sulfuras))
+    if (!item.is(agedBrie) && !item.is(backstagePass) && item.getQuality() > 0 && !item.is(sulfuras))
       item.decreaseQuality();
 
-    if (is(item, agedBrie) || is(item, backstagePass) || item.getQuality() <= 0 || is(item, sulfuras))
+    if (item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras))
       item.increaseQuality();
 
-    if ((is(item, agedBrie) || is(item, backstagePass) || item.getQuality() <= 0 || is(item, sulfuras)) && is(item, backstagePass) && item.getSellIn() < 6)
+    if ((item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 6)
       item.increaseQuality();
 
-    if ((is(item, agedBrie) || is(item, backstagePass) || item.getQuality() <= 0 || is(item, sulfuras)) && is(item, backstagePass) && item.getSellIn() < 11)
+    if ((item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 11)
       item.increaseQuality();
 
-    if (!is(item, sulfuras))
+    if (!item.is(sulfuras))
       item.decreaseSellIn();
 
-    if (item.getSellIn() < 0 && !is(item, agedBrie) && !is(item, backstagePass) && item.getQuality() > 0 && !is(item, sulfuras))
+    if (item.getSellIn() < 0 && !item.is(agedBrie) && !item.is(backstagePass) && item.getQuality() > 0 && !item.is(sulfuras))
       item.decreaseQuality();
 
-    if (item.getSellIn() < 0 && !is(item, agedBrie) && is(item, backstagePass))
+    if (item.getSellIn() < 0 && !item.is(agedBrie) && item.is(backstagePass))
       item.setZeroQuality();
 
-    if (item.getSellIn() < 0 && is(item, agedBrie))
+    if (item.getSellIn() < 0 && item.is(agedBrie))
       item.increaseQuality();
-  }
-
-  private static boolean is(Item item, String itemName) {
-    return itemName.equals(item.getName());
   }
 
 }
