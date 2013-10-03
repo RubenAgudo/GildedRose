@@ -15,23 +15,29 @@ public class Item {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public int getSellIn() {
     return sellIn;
-  }
-
-  public void setSellIn(int sellIn) {
-    this.sellIn = sellIn;
   }
 
   public int getQuality() {
     return quality;
   }
 
-  public void setQuality(int quality) {
-    this.quality = quality;
+  public void setZeroQuality() {
+    quality = 0;
+  }
+
+  public void increaseQuality() {
+    if (quality < 50)
+      quality++;
+  }
+
+  public void decreaseQuality() {
+    if (quality < 50)
+      quality--;
+  }
+
+  public void decreaseSellIn() {
+    sellIn--;
   }
 }
