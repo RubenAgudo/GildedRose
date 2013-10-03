@@ -19,8 +19,12 @@ public class Item {
     return sellIn;
   }
 
-  public int getQuality() {
-    return quality;
+  public boolean hasQuality(int someQuality) {
+    return quality == someQuality;
+  }
+
+  public boolean hasSellIn(int someSellIn) {
+    return sellIn == someSellIn;
   }
 
   public void setZeroQuality() {

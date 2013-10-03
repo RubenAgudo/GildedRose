@@ -74,8 +74,8 @@ public class GildedRoseSmokeTest {
 
   private void assertThatQualitiesAndSellInsAreOk(List<Integer> expectedQualities, List<Integer> expectedSellIns, List<Item> updatedItems) {
     for (int idx = 0, max = updatedItems.size(); idx < max; idx++) {
-      assertThat(String.format("%s has a wrong quality value", updatedItems.get(idx).getName()), updatedItems.get(idx).getQuality(), is(expectedQualities.get(idx)));
-      assertThat(String.format("%s has a wrong sellIn value", updatedItems.get(idx).getName()), updatedItems.get(idx).getSellIn(), is(expectedSellIns.get(idx)));
+      assertThat(String.format("%s has a wrong quality value", updatedItems.get(idx).getName()), updatedItems.get(idx).hasQuality(expectedQualities.get(idx)), is(true));
+      assertThat(String.format("%s has a wrong sellIn value", updatedItems.get(idx).getName()), updatedItems.get(idx).hasSellIn(expectedSellIns.get(idx)), is(true));
     }
   }
 

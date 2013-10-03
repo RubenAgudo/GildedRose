@@ -35,13 +35,13 @@ public class GildedRose {
     if (!item.is(agedBrie) && !item.is(backstagePass) && !item.is(sulfuras))
       item.decreaseQuality();
 
-    if (item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras))
+    if (item.is(agedBrie) || item.is(backstagePass) || item.is(sulfuras))
       item.increaseQuality();
 
-    if ((item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 6)
+    if ((item.is(agedBrie) || item.is(backstagePass) || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 6)
       item.increaseQuality();
 
-    if ((item.is(agedBrie) || item.is(backstagePass) || item.getQuality() <= 0 || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 11)
+    if ((item.is(agedBrie) || item.is(backstagePass) || item.is(sulfuras)) && item.is(backstagePass) && item.getSellIn() < 11)
       item.increaseQuality();
 
     if (!item.is(sulfuras))
