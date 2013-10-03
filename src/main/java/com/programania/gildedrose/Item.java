@@ -33,7 +33,7 @@ public class Item {
   }
 
   public void decreaseQuality() {
-    if (quality < 50)
+    if (quality > 0)
       quality--;
   }
 
