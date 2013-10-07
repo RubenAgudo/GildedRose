@@ -1,9 +1,9 @@
 package com.programania.gildedrose;
 
-public class Item {
-  public String name;
-  public int sellIn;
-  public int quality;
+abstract public class Item {
+  protected final String name;
+  protected int sellIn;
+  protected int quality;
 
   public Item(String name, int sellIn, int quality) {
     this.name = name;
@@ -13,10 +13,6 @@ public class Item {
 
   public String getName() {
     return name;
-  }
-
-  public int getSellIn() {
-    return sellIn;
   }
 
   public boolean hasQuality(int someQuality) {
@@ -45,7 +41,6 @@ public class Item {
     sellIn--;
   }
 
-  public boolean is(String someName) {
-    return name == someName;
-  }
+  abstract void update();
+
 }
