@@ -42,5 +42,4 @@ abstract public class Item {
   }
 
   abstract void update();
-
 }
